@@ -2,13 +2,19 @@ const USER = 'USER';
 
 export function getLocalUser() {
 	const user = localStorage.getItem(USER);
-
-	if (user && user.token) return JSON.parse(user);
-
-	else return {
-		email: '',
-		id: '',
-		token: ''
+	try {
+		const parsedUser = JSON.parse(user);
+		if (parsedUser && parsedUser.token) {
+			return parsedUser;
+		}
+	}
+	
+	catch(e) {
+		return {
+			id: '',
+			email: '',
+			token: ''
+		}
 	}
 }
 

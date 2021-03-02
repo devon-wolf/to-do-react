@@ -23,6 +23,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log(this.state.user.token);
     return (
       <Router>
           <Header />
