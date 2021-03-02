@@ -1,9 +1,9 @@
 const USER = 'USER';
 
-export function getUserFromLocalStorage() {
+export function getLocalUser() {
 	const user = localStorage.getItem(USER);
 
-	if (user) return JSON.parse(user);
+	if (user && user.token) return JSON.parse(user);
 
 	else return {
 		email: '',
@@ -12,6 +12,6 @@ export function getUserFromLocalStorage() {
 	}
 }
 
-export function putUserInLocalStorage(user) {
+export function storeLocalUser(user) {
 	localStorage.setItem(USER, JSON.stringify(user));
 }
