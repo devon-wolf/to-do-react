@@ -10,20 +10,15 @@ import SignUpPage from './auth/SignUpPage.js';
 import Home from './home/Home.js';
 import ToDoListPage from './todo/ToDoListPage.js';
 import Header from './common/Header.js';
-import { getLocalUser, storeLocalUser } from './utils/local-storage-utils.js';
+import { getLocalUser } from './utils/local-storage-utils.js';
 
 export default class App extends Component {
   state = {
     user: getLocalUser()
   }
-  
-  handleUserChange = (user) => {
-    this.setState({ user })
-    storeLocalUser(user);
-  }
 
   render() {
-    console.log(this.state.user.token);
+    
     return (
       <Router>
           <Header />

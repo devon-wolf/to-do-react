@@ -15,7 +15,7 @@ export default class SignUpPage extends Component {
 	handleUserChange = (user) => {
 		this.setState({ user });
 		storeLocalUser(user);
-		this.props.history.push('/todos');
+		this.props.history.push('/todo');
 	}
 
 	render() {
