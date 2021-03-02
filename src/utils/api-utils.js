@@ -16,3 +16,25 @@ export async function loginUser(email, password) {
 
 	return response.body;
 }
+
+export async function getToDos(token) {
+	const response = await request.get(`${URL}/api/todos`)
+		.set({'Authorization': token});
+
+	return response.body;
+}
+
+export async function addToDo(todo, token) {
+	const response = await request.post(`${URL}/api/todos`)
+		.set({'Authorization': token})
+		.send({todo});
+
+	return response.body;
+}
+
+export async function completeToDo(todoID, token) {
+	const response = await request.put(`${URL}/api/todos/${todoID}`)
+		.set({'Authorization': token})
+
+	return response.body;
+}
