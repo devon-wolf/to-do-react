@@ -1,0 +1,36 @@
+.header {
+	background-color: yellowgreen;
+	padding: .5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header h2 {
+	margin: 0;
+}
+
+.navBar {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 1rem;
+}
+
+.navItem {
+	margin: .5rem;
+}
+
+.logout {
+	cursor: pointer;
+	background: rebeccapurple;
+	padding: .25rem 1rem;
+	border-radius: 10rem;
+	font-style: italic;
+	color: white;
+	display: flex;
+}
+
+.current {
+	display: none;
+}
