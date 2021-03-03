@@ -23,6 +23,11 @@ export default class App extends Component {
     this.setState({user: getLocalUser()});
   }
 
+  handleLogoutClick = e => {
+    localStorage.clear();
+    this.setState({user: getLocalUser()});
+  }
+
   render() {
     console.log('APP STATE', this.state);
     const { user } = this.state;
@@ -30,6 +35,7 @@ export default class App extends Component {
       <Router>
           <Header 
           user={this.state.user}
+          handleLogoutClick={this.handleLogoutClick}
           />
           <Switch>
             <Route

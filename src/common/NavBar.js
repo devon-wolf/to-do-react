@@ -5,7 +5,7 @@ import style from './Header.module.css'
 export default class NavBar extends Component {
 	render() {
 		return (
-			<nav>
+			<nav className={style.navBar}>
 					<NavLink 
 						exact 
 						activeClassName={style.current} 
@@ -24,6 +24,8 @@ export default class NavBar extends Component {
 						to="/todo">
 						To Do List
 						</NavLink>
+
+						<span className={style.logout} onClick={this.props.handleLogoutClick}>Logout</span>
 						</>
 					}
 
