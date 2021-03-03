@@ -31,7 +31,7 @@ export async function getToDos(token) {
 export async function addToDo(todo, token) {
 	const response = await request.post(`${URL}/api/todos`)
 		.set({'Authorization': token})
-		.send({todo});
+		.send({todo: todo, completed: false});
 
 	return response.body;
 }
