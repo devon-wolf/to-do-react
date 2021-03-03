@@ -1,0 +1,33 @@
+.main {
+	background-color: skyblue;
+	padding: 1rem;
+}
+
+.newEntry {
+	background-color: salmon;
+	padding: 1rem;
+}
+
+.newEntry input {
+	margin: 0 1rem;
+}
+
+.list {
+
+}
+
+.listItem {
+	margin: 1rem;
+	cursor: pointer;
+	background-color: thistle;
+	width: 50%;
+}
+
+.listItem:hover {
+	color:slategray;
+}
+
+.complete {
+	text-decoration: line-through;
+	color: slategray;
+}

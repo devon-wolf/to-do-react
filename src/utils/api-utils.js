@@ -40,6 +40,7 @@ export async function addToDo(todo, token) {
 export async function completeToDo(todoID, token) {
 	const response = await request.put(`${URL}/api/todos/${todoID}`)
 		.set({'Authorization': token})
+		.send({completed: true});
 
 	return response.body;
 }

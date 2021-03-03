@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { addToDo, getToDos } from '../utils/api-utils.js'
-
+import { addToDo, getToDos, completeToDo } from '../utils/api-utils.js'
+import style from './ToDo.module.css'
 
 export default class ToDoListPage extends Component {
 	state = {
@@ -25,12 +25,20 @@ export default class ToDoListPage extends Component {
 		this.setState({ formEntry: '' })
 	}
 
-	render() {		
+	handleCompleteClick = async (e) => {
+		await completeToDo(e.target.value, this.state.user.token);
+		await this.fetchToDos();
+	}
+
+	render() {
+
+		console.log(this.state);
+
 		return (
-			<main>
+			<main className={style.main}>
 				<h1>TO DO LIST</h1>
 				
-				<form onSubmit={this.handleSubmit}>
+				<form className={style.newEntry} onSubmit={this.handleSubmit}>
 					<label>
 						What do you need to do?
 						<input
@@ -39,10 +47,20 @@ export default class ToDoListPage extends Component {
 						this.setState({ formEntry: e.target.value })} />
 					</label>
 				</form>
+
 				<ul>
 				{this.state.todos.length
 					? this.state.todos.map(item => 
-						<li key={`${item.id}-${item.todo}`}>{item.todo}</li>
+						<li
+						className={item.completed 
+							? style.complete
+							: style.listItem}
+						key={`${item.id}-${item.todo}`}
+						value={item.id}
+						onClick={this.handleCompleteClick}
+						>
+							{item.todo}
+						</li>
 						)
 					: <p>You've got nothing to do!</p>
 				}
