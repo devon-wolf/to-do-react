@@ -1,5 +1,9 @@
 .header {
 	background-color: yellowgreen;
+	padding: .5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .header h2 {
@@ -8,9 +12,8 @@
 
 .navBar {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
-	background-color: turquoise;
 	padding: 0 1rem;
 }
 
@@ -25,6 +28,7 @@
 	border-radius: 10rem;
 	font-style: italic;
 	color: white;
+	display: flex;
 }
 
 .current {

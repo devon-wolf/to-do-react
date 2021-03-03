@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AuthForm from './AuthForm.js'
 import {signUpUser} from '../utils/api-utils.js'
-// import { storeLocalUser } from '../utils/local-storage-utils.js'
+import style from './Login.module.css'
 
 export default class SignUpPage extends Component {
 
@@ -12,8 +12,8 @@ export default class SignUpPage extends Component {
 
 	render() {
 		return (
-			<main>
-				<h1>SIGN UP</h1>
+			<main className={style.main}>
+				<h1>Sign Up</h1>
 				<AuthForm authFunction={signUpUser} handleFormSubmit={this.handleFormSubmit} />
 			</main>
 		)

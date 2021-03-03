@@ -1,0 +1,30 @@
+.form {
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.form label {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	width: 50%;
+}
+
+.form input {
+	margin: 0 1rem;
+	width: 100%;
+}
+
+.form button {
+	margin: 1rem;
+}
+
+.main {
+	padding: 1rem;
+}
+
+.main h1 {
+	margin: 0;
+}

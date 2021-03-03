@@ -29,7 +29,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log('APP STATE', this.state);
     const { user } = this.state;
     return (
       <Router>

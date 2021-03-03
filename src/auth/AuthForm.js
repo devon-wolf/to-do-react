@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import style from './Login.module.css'
 
 export default class AuthForm extends Component {
 	state = {
@@ -15,13 +16,13 @@ export default class AuthForm extends Component {
 	render() {
 		
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form className={style.form} onSubmit={this.handleSubmit}>
 				<label>
-					Email
+					<span>Email</span>
 					<input value={this.state.email} onInput={e => this.setState({email: e.target.value})}/>
 				</label>
 				<label>
-					Password
+					<span>Password</span>
 					<input value={this.state.password} onInput={e => this.setState({password: e.target.value})}/>
 				</label>
 				<button>

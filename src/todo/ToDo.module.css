@@ -1,10 +1,8 @@
 .main {
-	background-color: skyblue;
 	padding: 1rem;
 }
 
 .newEntry {
-	background-color: salmon;
 	padding: 1rem;
 }
 
@@ -19,7 +17,6 @@
 .listItem {
 	margin: 1rem;
 	cursor: pointer;
-	background-color: thistle;
 	width: 50%;
 }
 
