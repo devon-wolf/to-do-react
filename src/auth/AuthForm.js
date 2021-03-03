@@ -9,7 +9,7 @@ export default class AuthForm extends Component {
 	handleSubmit = async (e) => {
 		e.preventDefault();
 		const user = await this.props.authFunction(this.state.email, this.state.password);
-		this.props.handleUserChange(user);
+		this.props.handleFormSubmit(user);
 	} 
 
 	render() {

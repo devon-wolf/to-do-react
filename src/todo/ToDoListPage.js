@@ -30,10 +30,11 @@ export default class ToDoListPage extends Component {
 		await this.fetchToDos();
 	}
 
+	doNothing = e => {
+		return;
+	}
+
 	render() {
-
-		console.log(this.state);
-
 		return (
 			<main className={style.main}>
 				<h1>TO DO LIST</h1>
@@ -57,7 +58,9 @@ export default class ToDoListPage extends Component {
 							: style.listItem}
 						key={`${item.id}-${item.todo}`}
 						value={item.id}
-						onClick={this.handleCompleteClick}
+						onClick={item.completed
+							? this.doNothing	
+							: this.handleCompleteClick}
 						>
 							{item.todo}
 						</li>

@@ -7,7 +7,7 @@ export default class Header extends Component {
 		return (
 			<header>
 				<h2>An App to Show You a List You Made</h2>
-				<NavBar />
+				<NavBar user={this.props.user} />
 			</header>
 		)
 	}
